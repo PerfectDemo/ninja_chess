@@ -1,6 +1,7 @@
 
 mod piece;
 mod board;
+mod parser;
 
 pub enum COLOUR {
     RED,
@@ -19,4 +20,10 @@ pub enum PIECES {
     ELEPHANT,
 
     EMPTY,
+}
+
+pub enum STAGE {
+    FORWARD,
+    BACKWARD,
+    TRANSECT,
 }

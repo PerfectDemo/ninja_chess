@@ -6,12 +6,12 @@ use crate::COLOUR;
 
 
 
-struct Board<'a> {
-    boards: Vec<Vec<Piece<'a>>>
+pub struct Board<'a> {
+    pub boards: Vec<Vec<Piece<'a>>>
 }
 
 impl <'a>Board<'a> {
-    fn init() -> Board<'a> {
+    pub fn init() -> Board<'a> {
         let all = vec![
             vec![
                Piece::new(COLOUR::BLACK, PIECES::ROOK),

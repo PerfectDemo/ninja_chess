@@ -2,11 +2,11 @@
 use crate::PIECES;
 use crate::STAGE;
 
-struct Command {
-    identity: PIECES,
-    stage: STAGE,
-    from: usize,
-    to: usize
+pub struct Command {
+    pub identity: PIECES,
+    pub stage: STAGE,
+    pub from: usize,
+    pub to: usize
 }
 
 impl Command {
@@ -30,15 +30,15 @@ impl Command {
         let from;
 
         match from_char {
-            '一' | '1' => from = 1_usize,
-            '二' | '2' => from = 2_usize,
-            '三' | '3' => from = 3_usize,
-            '四' | '4' => from = 4_usize,
-            '五' | '5' => from = 5_usize,
-            '六' | '6' => from = 6_usize,
-            '七' | '7' => from = 7_usize,
-            '八' | '8' => from = 8_usize,
-            '九' | '9' => from = 9_usize,
+            '一' | '1' => from = 0_usize,
+            '二' | '2' => from = 1_usize,
+            '三' | '3' => from = 2_usize,
+            '四' | '4' => from = 3_usize,
+            '五' | '5' => from = 4_usize,
+            '六' | '6' => from = 5_usize,
+            '七' | '7' => from = 6_usize,
+            '八' | '8' => from = 7_usize,
+            '九' | '9' => from = 8_usize,
             _ => return Err("找不到正确起点")
         } 
 
@@ -57,15 +57,15 @@ impl Command {
         let to;
 
         match to_char {
-            '一' | '1' => to = 1_usize,
-            '二' | '2' => to = 2_usize,
-            '三' | '3' => to = 3_usize,
-            '四' | '4' => to = 4_usize,
-            '五' | '5' => to = 5_usize,
-            '六' | '6' => to = 6_usize,
-            '七' | '7' => to = 7_usize,
-            '八' | '8' => to = 8_usize,
-            '九' | '9' => to = 9_usize,
+            '一' | '1' => to = 0_usize,
+            '二' | '2' => to = 1_usize,
+            '三' | '3' => to = 2_usize,
+            '四' | '4' => to = 3_usize,
+            '五' | '5' => to = 4_usize,
+            '六' | '6' => to = 5_usize,
+            '七' | '7' => to = 6_usize,
+            '八' | '8' => to = 7_usize,
+            '九' | '9' => to = 8_usize,
             _ => return Err("找不到正确终点")
         } 
 

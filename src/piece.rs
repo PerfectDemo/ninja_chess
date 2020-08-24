@@ -6,10 +6,12 @@ pub trait Show {
     fn show(&self);
 }
 
+
+#[derive(Copy, Clone)]
 pub struct Piece<'a> {
-    colour: COLOUR,
-    identity: PIECES,
-    title: &'a str
+    pub colour: COLOUR,
+    pub identity: PIECES,
+    pub title: &'a str
 }
 
 impl <'a> Piece<'a> {

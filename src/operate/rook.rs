@@ -115,8 +115,29 @@ impl Operate for RookOperate {
         board.boards[to.x][to.y] = board.boards[from.x][from.y];
         board.boards[from.x][from.y] = Piece::new(COLOUR::BLACK, PIECES::EMPTY);
     }
-    fn after_run(board: &mut Board) {
-        todo!()
+    fn after_run(board: &mut Board, location: &(Location, Location)) {
+        let (_, to) = location;
+        let current = &board.boards[to.x][to.y];
+
+        for i  in 0..10_usize {
+            let check_piece = &board.boards[to.x][i];
+            if let PIECES::KING = check_piece.identity {
+                if current.colour != check_piece.colour {
+                    println!("将军");
+                }
+            }
+          
+        }
+
+        for i  in 0..9_usize {
+            let check_piece = &board.boards[i][to.y];
+            if let PIECES::KING = check_piece.identity {
+                if current.colour != check_piece.colour {
+                    println!("将军");
+                }
+            }
+          
+        }
     }
 }
 
